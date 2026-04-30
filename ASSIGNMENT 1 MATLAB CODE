@@ -1,22 +1,23 @@
-%% Declaring known Variables
-m = 5;              % Mass (kg)
-k = 2000;           % Spring stiffness (N/m)
-x0 = 0.02;          % Initial displacement (m)
-v0 = 0;             % Initial velocity (m/s)
-
->> %% 1.2 Natural Angular Frequency(wn)
-%wn: wn = sqrt(k/m)
-wn = sqrt(k/m);     
-fprintf('Natural angular frequency (wn) = %.2f rad/s\n', wn); % %.2f is placement holder for value (wn)
-Natural angular frequency (wn) = 20.00 rad/s
->> t = linspace(0, 5, 1000);
-
->> %% 1.2 Displacement calculation (x(t)) % Oscillation from max displacement and 0 velocity
-% Equation: x(t) = x0 * cos(wn * t) 
-% Since initial velocity is zero, cosine formular is used
-x = x0 * cos(wn * t);
-
+>> %%Student No. 14704404_SME3701-2026_Assignment 1
 >> 
+>> %%known Variables
+>> m = 5;     %mass (kg)
+>> k = 2000;  %stiffness (N/m)
+>> x0 = 0.02; %initial displacement (m)
+>> v0 = 0;    %initial velocity (m/s)
+>> 
+>> %%1.1 natural angular frequency
+>> %wn: wn=sqrt(k/m)
+>> wn = sqrt(k/m);
+>> fprintf('natural angular frequency (wn) = %.2f rad/s\n',wn)
+natural angular frequency (wn) = 20.00 rad/s
+>> 
+>> %%1.2 displacement of the system (x(t))
+>> t = linspace(0,5,1000);
+>> %eq: x(t) = x0cos(wn*t) -- since initial velocity is zero
+>> x = x0*cos(wn*t);
+
+
 >> %% 1.3 Plot displacement vs time
 figure;
 plot(t, x, 'b', 'LineWidth', 2);  % time vs displacement graph with thick '2' blue 'b' line and grid
@@ -33,7 +34,7 @@ v = -x0 * wn * sin(wn * t);
 
 %% Plot velocity vs time
 figure;
-plot(t, v, 'r', 'LineWidth', 2); % time vs velocity graph with thick '2' red 'r' line and grid
+plot(t, v, 'g', 'LineWidth', 2); % time vs velocity graph with thick '2' red 'r' line and grid
 xlabel('Time (s)');
 ylabel('Velocity (m/s)');
 title('Velocity vs Time for Undamped System');
